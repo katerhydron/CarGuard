@@ -1,0 +1,24 @@
+
+[{
+ "deviceId":3289,
+ "type":null,
+ "attributes": {
+    "status":"00000000",
+    "charge":true,
+    "ignition":false,
+    "ip":"188.146.224.41"
+  },
+  "id":33594102,
+  "protocol":"tk103",
+  "serverTime":null,
+  "deviceTime":"2018-05-26T09:52:30.000+0000",
+  "fixTime":"2018-05-26T09:52:30.000+0000",
+  "outdated":false,
+  "valid":true,
+  "latitude":51.738656666666664,
+  "longitude":19.56618,
+  "altitude":0.0,
+  "speed":0.05399570000000001,
+  "course":0.0,
+  "address":null
+}]

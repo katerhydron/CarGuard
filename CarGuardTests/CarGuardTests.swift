@@ -7,23 +7,24 @@
 //
 
 import XCTest
+import MapKit
 @testable import CarGuard
 
 class CarGuardTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testPositionFromJson() {
+        let jsonData = fakeJSONData()
+        let coord:CLLocationCoordinate2D =  PositionMonitor().positionFromJson(jsonData)!
+        assert(coord.latitude == 51.738656666666664)
+        assert(coord.longitude == 19.56618)
     }
     
     func testPerformanceExample() {
@@ -33,4 +34,15 @@ class CarGuardTests: XCTestCase {
         }
     }
     
+    func fakeJSONData() -> (Data) {
+        if let url = Bundle.main.url(forResource:"PositionsJSON", withExtension: "json") {
+            do {
+                let data = try Data(contentsOf: url)
+                return data
+            } catch {
+                print("error:\(error)")
+            }
+        }
+        return Data()
+    }
 }
